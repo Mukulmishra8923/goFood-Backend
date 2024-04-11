@@ -3,7 +3,7 @@ import bcrypt, { compare } from "bcrypt";
 import { validationResult } from "express-validator";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import transporter from "../config/EmailConfig.js";
+import transporter from "../config/emailConfig.js";
 dotenv.config();
 
 class userController {
