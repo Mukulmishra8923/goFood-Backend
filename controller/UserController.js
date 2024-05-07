@@ -3,7 +3,6 @@ import bcrypt, { compare } from "bcrypt";
 import { validationResult } from "express-validator";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-// import { BASE_URL } from "../../frontend/src/api/Api.js";
 import transporter from "../config/emailConfig.js";
 dotenv.config();
 
@@ -139,7 +138,9 @@ class userController {
         const token = jwt.sign({ userID: user._id }, secret, {
           expiresIn: "15m",
         });
-        const link = `${process.env.EMAIL_BASE_URL}reset-password/${user._id}/${token}`;
+        // ------------EMAIL-LINK---------------------
+        const link = `https://gofoodapp.netlify.app/user/reset/${user._id}/${token}`;
+        // console.log("link is ", link)
 
         // Send Email
 
