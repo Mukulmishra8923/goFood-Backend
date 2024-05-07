@@ -6,9 +6,6 @@ const connectDb = async (DATABASE_URL) => {
       dbName: "goFood",
     });
     // console.log("Database Connected successfully...");
-
-    //   --------------------CALL static data-------------------
-
     const fetchData = await mongoose.connection.db
       .collection("food_items")
       .find({})
@@ -25,5 +22,4 @@ const connectDb = async (DATABASE_URL) => {
     return error;
   }
 };
-
 export default connectDb;

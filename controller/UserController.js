@@ -138,7 +138,7 @@ class userController {
         const token = jwt.sign({ userID: user._id }, secret, {
           expiresIn: "15m",
         });
-        const link = `http://127.0.0.1:3000/user/reset/${user._id}/${token}`;
+        const link = `https://gofood-backend-1.onrender.com/reset-password/${user._id}/${token}`;
 
         // Send Email
 
